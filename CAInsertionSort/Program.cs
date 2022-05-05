@@ -3,7 +3,7 @@
 
     static void Main(string[] args)
     {
-        InsertionSort(new int[] { 7, 4, 5, 2 });
+        InsertionSortByWhile(new int[] { 3, 4, 5, 2 });
         Console.ReadLine();
     }
 
@@ -19,22 +19,19 @@
                 }
     }
 
-    //static void InsertionSortByWhile(int[] numbers)
-    //{
-    //    int inner = default(int);
-
-    //    for (int i = 1; i <= numbers.Length; i++)
-    //    {
-    //        int temp = numbers[i];
-    //        inner = i;
-
-    //        while (inner > 0 && numbers[inner - 1] >= temp)
-    //        {
-    //            numbers[inner] = numbers[inner - 1];
-    //            inner--;
-    //        }
-
-    //        numbers[i] = temp;
-    //    }
-    //}
+    static void InsertionSortByWhile(int[] numbers)
+    {
+        int j, temp;
+        for (int i = 1; i <= numbers.Length - 1; i++)
+        {
+            temp = numbers[i];
+            j = i - 1;
+            while (j >= 0 && numbers[j] > temp)
+            {
+                numbers[j + 1] = numbers[j];
+                j--;
+            }
+            numbers[j + 1] = temp;
+        }
+    }
 }
